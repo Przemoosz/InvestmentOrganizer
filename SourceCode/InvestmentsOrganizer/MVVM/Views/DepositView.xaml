@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:InvestmentsOrganizer.MVVM.Views"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             Background="Aqua">
+             Background="#2F115B">
     <Grid>
         
     </Grid>

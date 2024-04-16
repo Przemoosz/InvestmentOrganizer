@@ -5,6 +5,8 @@
              xmlns:viewModels="clr-namespace:InvestmentsOrganizer.MVVM.ViewModels"
              xmlns:views="clr-namespace:InvestmentsOrganizer.MVVM.Views">
     <Application.Resources>
+        <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
+
         <DataTemplate DataType="{x:Type viewModels:DepositViewModel}">
             <views:DepositView/>
         </DataTemplate> 
