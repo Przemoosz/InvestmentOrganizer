@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="InvestmentsOrganizer.MVVM.Views.UserControls.NavigationTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="25" d:DesignWidth="1000">
+				<Grid Height="25">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<TextBlock 
+						Grid.Column="0"
+					    Grid.ColumnSpan="2"
+						FontWeight="Regular"
+					           Text="Investment Organizer"
+					           VerticalAlignment="Center"
+					           HorizontalAlignment="Center"
+					           Foreground="White"
+					           FontSize="18"
+					           FontFamily="{StaticResource Dosis}"/>
+					<Button Grid.Column="3"
+					        Width="100"
+					        Content="Summary"
+					        Command="{Binding NavigateSummaryCommand}"
+					        Foreground="LightGray"
+					        FontSize="16"
+					        BorderThickness="0"
+					        FontFamily="{StaticResource Dosis}">
+						<Button.Resources>
+							<Style TargetType="Border">
+								<Setter Property="CornerRadius" Value="4"/>
+							</Style>
+						</Button.Resources>
+						<Button.Style>
+							<Style TargetType="Button">
+								<Setter Property="Background" Value="#37146c"/>
+								<Style.Triggers>
+									<Trigger Property="IsMouseOver" Value="True">
+										<Setter Property="Background" Value="#2f115b"/>
+									</Trigger>
+								</Style.Triggers>
+							</Style>
+						</Button.Style>
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Border
+									Background="{TemplateBinding Background}">
+									<ContentPresenter 
+										VerticalAlignment="Center"
+										HorizontalAlignment="Center"/>
+
+								</Border>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+					<Button Grid.Column="2"
+							Width="100"
+							Content="Deposit"
+							Command="{Binding NavigateDepositCommand}"
+							Foreground="LightGray"
+							FontSize="16"
+							BorderThickness="0"
+							FontFamily="{StaticResource Dosis}">
+						<Button.Resources>
+							<Style TargetType="Border">
+								<Setter Property="CornerRadius" Value="4"/>
+							</Style>
+						</Button.Resources>
+						<Button.Style>
+							<Style TargetType="Button">
+								<Setter Property="Background" Value="#37146c"/>
+								<Style.Triggers>
+									<Trigger Property="IsMouseOver" Value="True">
+										<Setter Property="Background" Value="#2f115b"/>
+									</Trigger>
+								</Style.Triggers>
+							</Style>
+						</Button.Style>
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Border
+				Background="{TemplateBinding Background}">
+									<ContentPresenter 
+								VerticalAlignment="Center"
+								HorizontalAlignment="Center"/>
+
+								</Border>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+					<Button 
+						Grid.Column="7" 
+						Width="80" 
+						Content="Close" 
+						Command="{Binding CloseAppCommand}"
+						BorderThickness="0"
+						Height="20"
+						Foreground="#F3F3F3"
+						Cursor="Hand"
+						FontFamily="{StaticResource Dosis}"
+						VerticalAlignment="Center"
+						HorizontalAlignment="Center">
+						<Button.Resources>
+							<Style TargetType="Border">
+								<Setter Property="CornerRadius" Value="9"/>
+							</Style>
+						</Button.Resources>
+						<Button.Style>
+							<Style TargetType="Button">
+								<Setter Property="Background" Value="#E65B48"/>
+								<Style.Triggers>
+									<Trigger Property="IsMouseOver" Value="True">
+										<Setter Property="Background" Value="#E3441F"/>
+									</Trigger>
+								</Style.Triggers>
+							</Style>
+						</Button.Style>
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Border
+									Background="{TemplateBinding Background}">
+									<ContentPresenter 
+										VerticalAlignment="Center"
+										HorizontalAlignment="Center"/>
+								</Border>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+				</Grid>
+</UserControl>
