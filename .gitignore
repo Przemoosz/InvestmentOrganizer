@@ -1,6 +1,8 @@
 # Build files
 SourceCode/InvestmentsOrganizer/bin/*
 SourceCode/InvestmentsOrganizer/obj/*
+
 # Other
 .idea/
+.vs/
 
