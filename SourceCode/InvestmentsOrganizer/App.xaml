@@ -5,6 +5,8 @@
              xmlns:views="clr-namespace:InvestmentsOrganizer.MVVM.Views">
     <Application.Resources>
         <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
+        <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
+        <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
 
         <DataTemplate DataType="{x:Type viewModels:DepositViewModel}">
             <views:DepositView />

@@ -12,7 +12,7 @@
         WindowStyle="None">
 
     <Grid>
-        <Grid Background="#37146c">
+        <Grid Background="{StaticResource NavigationBackground}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
                 <RowDefinition />
