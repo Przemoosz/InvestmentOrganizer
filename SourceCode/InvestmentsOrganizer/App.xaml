@@ -7,14 +7,17 @@
         <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
         <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
         <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
-
         <DataTemplate DataType="{x:Type viewModels:DepositViewModel}">
             <views:DepositView />
         </DataTemplate>
-
         <DataTemplate DataType="{x:Type viewModels:SummaryViewModel}">
             <views:SummaryView />
         </DataTemplate>
-
+        
+        <!-- Base Styles -->
+        <Style x:Key="ButtonBaseStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="LightGray" />
+            <Setter Property="FontFamily" Value="{StaticResource Dosis}" />
+        </Style>
     </Application.Resources>
 </Application>

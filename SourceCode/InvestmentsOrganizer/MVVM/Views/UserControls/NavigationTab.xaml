@@ -8,12 +8,7 @@
 
     <Grid Height="25" Background="{StaticResource NavigationBackground}">
         <Grid.Resources>
-
-            <Style x:Key="ButtonBaseStyle" TargetType="Button">
-                <Setter Property="Foreground" Value="LightGray" />
-                <Setter Property="FontFamily" Value="{StaticResource Dosis}" />
-            </Style>
-
+            
             <Style x:Key="NavigationButtonStyle" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
                 <Setter Property="Background" Value="{StaticResource NavigationBackground}" />
                 <Setter Property="FontSize" Value="16" />
