@@ -3,28 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:InvestmentsOrganizer"
         xmlns:userControls="clr-namespace:InvestmentsOrganizer.MVVM.Views.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="600" 
+        Title="MainWindow"
+        Height="600"
         Width="1000"
         ResizeMode="NoResize"
         WindowStyle="None">
-    
+
     <Grid>
-		<Grid Background="#37146c">
+        <Grid Background="#37146c">
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition/>
+                <RowDefinition Height="40" />
+                <RowDefinition />
             </Grid.RowDefinitions>
-				<userControls:NavigationTab Grid.Row="0" Margin="0,5,0,0"  MouseDown="Grid_MouseDown" />
-	            <Border Grid.Row="0" BorderThickness="0,0,0,1"
-	                    BorderBrush="#9968e3"
-	                    Margin="0,5,0,0"/>
-            <ContentControl Grid.Row="1"
-                            Content="{Binding Navigation.CurrentView}">
-            </ContentControl>
+            <userControls:NavigationTab
+                Grid.Row="0"
+                Margin="0,5,0,0"
+                MouseDown="Grid_MouseDown" />
+            <Border Grid.Row="0" BorderThickness="0,0,0,1"
+                    BorderBrush="#9968e3"
+                    Margin="0,5,0,0" />
+            <ContentControl Grid.Row="1" Content="{Binding Navigation.CurrentView}" />
         </Grid>
     </Grid>
 </Window>
