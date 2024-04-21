@@ -15,8 +15,8 @@
             
         </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.5*"/>
-            <ColumnDefinition Width="7.5*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid Column="0"
               Background="{StaticResource NavigationBackground}">
