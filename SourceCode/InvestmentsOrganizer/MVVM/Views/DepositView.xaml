@@ -9,21 +9,44 @@
              Background="#2F115B">
     <Grid>
         <Grid.Resources>
-            <Style BasedOn = "{StaticResource ButtonBaseStyle}" 
-                   TargetType = "Button" 
-                   x:Key=""></Style>
-            
+            <Style TargetType="{x:Type RadioButton}"
+                   x:Key="MenuButton">
+                <Style.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid VerticalAlignment="Stretch"
+                                      HorizontalAlignment="Stretch"
+                                      Background="{TemplateBinding Background}">
+                                    <TextBlock Text="AAA"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Margin" Value="0,5,0,5"/>
+                    <Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Foreground" Value="LightGray"/>
+                </Style.Setters>
+                <Style.Triggers>
+                    <Trigger Property="IsChecked" Value="True">
+                        <Setter Property="Background" Value="{StaticResource NavigationBackground}"/>
+                        <!-- #450a88 -->
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Grid Column="0"
-              Background="{StaticResource NavigationBackground}">
+        <Grid Column="0">
             <StackPanel Grid.Column="0" Margin="0,40,0,0">
-                <Button Height="40" Content="Overview"/>
-                <Button Height="40" Content="Add Deposit"/>
-                <Button Height="40" Content="Manage Deposits"/>
+                <RadioButton Style="{StaticResource MenuButton}" Content="Overview"/>
+                <RadioButton Style="{StaticResource MenuButton}" Content="Add Deposit"/>
+                <RadioButton Style="{StaticResource MenuButton}" Content="Manage Deposits"/>
             </StackPanel>
         </Grid>
         
