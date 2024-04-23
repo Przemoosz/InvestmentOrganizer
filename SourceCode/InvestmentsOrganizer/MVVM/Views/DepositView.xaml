@@ -5,52 +5,73 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:InvestmentsOrganizer.MVVM.Views"
              mc:Ignorable="d"
-             d:DesignHeight="540" d:DesignWidth="1000"
-             Background="#2F115B">
-    <Grid>
+             d:DesignHeight="540" d:DesignWidth="1000"             >
+	<Grid>
         <Grid.Resources>
-            <Style TargetType="{x:Type RadioButton}"
+			<Style TargetType="TextBlock" x:Key="MenuText" BasedOn="{StaticResource TextBlockBase}">
+				<Setter Property="FontSize" Value="16"/>
+				<Setter Property="Foreground" Value="LightGray"/>
+			</Style>
+
+			<Style TargetType="{x:Type RadioButton}"
                    x:Key="MenuButton">
-                <Style.Setters>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate>
-                                <Grid VerticalAlignment="Stretch"
+				<Style.Setters>
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate>
+								<Grid VerticalAlignment="Stretch"
                                       HorizontalAlignment="Stretch"
                                       Background="{TemplateBinding Background}">
-                                    <TextBlock Text="AAA"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Margin" Value="0,5,0,5"/>
-                    <Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
-                    <Setter Property="FontSize" Value="16"/>
-                    <Setter Property="Foreground" Value="LightGray"/>
-                </Style.Setters>
-                <Style.Triggers>
-                    <Trigger Property="IsChecked" Value="True">
-                        <Setter Property="Background" Value="{StaticResource NavigationBackground}"/>
-                        <!-- #450a88 -->
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Resources>
+									<TextBlock Text="AAA" Style="{StaticResource MenuText}"/>
+								</Grid>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+					<Setter Property="Background" Value="Transparent"/>
+					<Setter Property="BorderThickness" Value="0"/>
+					<!--<Setter Property="Margin" Value="0,5,0,5"/>-->
+					<Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
+					<Setter Property="FontSize" Value="16"/>
+					<Setter Property="Foreground" Value="LightGray"/>
+				</Style.Setters>
+				<Style.Triggers>
+					<Trigger Property="IsChecked" Value="True">
+						<Setter Property="Background" Value="#450a88"/>
+						<!-- #450a88 -->
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Grid Column="0">
-            <StackPanel Grid.Column="0" Margin="0,40,0,0">
-                <RadioButton Style="{StaticResource MenuButton}" Content="Overview"/>
-                <RadioButton Style="{StaticResource MenuButton}" Content="Add Deposit"/>
-                <RadioButton Style="{StaticResource MenuButton}" Content="Manage Deposits"/>
-            </StackPanel>
-        </Grid>
-        
+		<Border Background="{StaticResource NavigationBackground}"
+				CornerRadius="0,0,0,10">
+			<Grid Column="0" Background="Transparent">
+				<StackPanel Grid.Column="0" Margin="0,40,0,0">
+					<RadioButton Style="{StaticResource MenuButton}" 
+								 Content="Overview" 
+								 Height="50"
+								 Command="{Binding NavigateAddCommand}"/>
+					<RadioButton Style="{StaticResource MenuButton}" 
+								 Content="Add Deposit" 
+								 Height="50"
+								 Command="{Binding NavigateManageCommand}"/>
+					<RadioButton Style="{StaticResource MenuButton}" Content="Manage Deposits" Height="50"/>
+				</StackPanel>
+			</Grid>
+		</Border>
+		<Border Background="#2F115B" Grid.Column="1" CornerRadius="0,0,10,0">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition Height="10"/>
+				</Grid.RowDefinitions>
+				<ContentControl Grid.Row="0" Content="{Binding Navigation.CurrentView}" />
 
-        
-    </Grid>
+			</Grid>
+		</Border>
+
+	</Grid>
 </UserControl>
