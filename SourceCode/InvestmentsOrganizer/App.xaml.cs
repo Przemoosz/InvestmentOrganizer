@@ -26,7 +26,7 @@
 			serviceCollection.AddSingleton<DepositViewModel>();
 			serviceCollection.AddSingleton<AddDepositViewModel>();
 			serviceCollection.AddSingleton<ManageDepositViewModel>();
-			serviceCollection.AddSingleton<INavigationService, NavigationService>();
+			serviceCollection.AddSingleton<IMainNavigationService, MainNavigationService>();
 			serviceCollection.AddSingleton<IDepositNavigationService, DepositNavigationService>();
 			
 			serviceCollection.AddSingleton<Func<Type, ViewModel>>(provider => viewModelType => (ViewModel) provider.GetService(viewModelType));

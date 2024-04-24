@@ -1,6 +1,4 @@
 ﻿namespace InvestmentsOrganizer.Services
 {
-	public interface IDepositNavigationService: INavigationService
-	{
-	}
+	public interface IDepositNavigationService: INavigationService;
 }

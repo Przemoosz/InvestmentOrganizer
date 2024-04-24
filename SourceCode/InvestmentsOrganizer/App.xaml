@@ -6,7 +6,7 @@
 			 xmlns:viewsDeposit="clr-namespace:InvestmentsOrganizer.MVVM.Views.Deposit"
              xmlns:views="clr-namespace:InvestmentsOrganizer.MVVM.Views">
     <Application.Resources>
-        <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
+	    <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
         <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
         <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
 		<SolidColorBrush x:Key="OverviewBackground" Color="#2F115B" />

@@ -8,7 +8,7 @@
              d:DesignHeight="540" d:DesignWidth="1000"             >
 	<Grid>
         <Grid.Resources>
-			<Style TargetType="TextBlock" x:Key="MenuText" BasedOn="{StaticResource TextBlockBase}">
+	        <Style TargetType="TextBlock" x:Key="MenuText" BasedOn="{StaticResource TextBlockBase}">
 				<Setter Property="FontSize" Value="16"/>
 				<Setter Property="Foreground" Value="LightGray"/>
 			</Style>
@@ -53,12 +53,15 @@
 					<RadioButton Style="{StaticResource MenuButton}" 
 								 Content="Overview" 
 								 Height="50"
-								 Command="{Binding NavigateAddCommand}"/>
+								 Command="{Binding NavigateManageCommand}"
+								 IsChecked="{Binding IsManageSelected, Mode=TwoWay}"/>
 					<RadioButton Style="{StaticResource MenuButton}" 
 								 Content="Add Deposit" 
 								 Height="50"
-								 Command="{Binding NavigateManageCommand}"/>
-					<RadioButton Style="{StaticResource MenuButton}" Content="Manage Deposits" Height="50"/>
+								 Command="{Binding NavigateAddCommand}"
+								 IsChecked="{Binding IsAddSelected, Mode=TwoWay}"/>
+						<!-- <RadioButton Style="{StaticResource MenuButton}"  -->
+						<!--              Content="Manage Deposits" Height="50"/> -->
 				</StackPanel>
 			</Grid>
 		</Border>
