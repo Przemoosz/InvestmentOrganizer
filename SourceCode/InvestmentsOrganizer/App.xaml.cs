@@ -2,6 +2,7 @@
 {
 	using System.Windows;
 	using Core;
+	using InvestmentsOrganizer.MVVM.ViewModels.Deposit;
 	using Microsoft.Extensions.DependencyInjection;
 	using MVVM.ViewModels;
 	using Services;
@@ -23,7 +24,10 @@
 			serviceCollection.AddSingleton<MainViewModel>();
 			serviceCollection.AddSingleton<SummaryViewModel>();
 			serviceCollection.AddSingleton<DepositViewModel>();
-			serviceCollection.AddSingleton<INavigationService, NavigationService>();
+			serviceCollection.AddSingleton<AddDepositViewModel>();
+			serviceCollection.AddSingleton<ManageDepositViewModel>();
+			serviceCollection.AddSingleton<IMainNavigationService, MainNavigationService>();
+			serviceCollection.AddSingleton<IDepositNavigationService, DepositNavigationService>();
 			
 			serviceCollection.AddSingleton<Func<Type, ViewModel>>(provider => viewModelType => (ViewModel) provider.GetService(viewModelType));
 			_serviceProvider = serviceCollection.BuildServiceProvider();

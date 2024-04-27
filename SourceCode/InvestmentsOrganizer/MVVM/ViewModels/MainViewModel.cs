@@ -5,19 +5,16 @@
 
 	public sealed class MainViewModel: ViewModel
 	{
-		private INavigationService _navigationService;
+		private readonly IMainNavigationService _navigationService;
 
 		public RelayCommand NavigateDepositCommand { get; init; }
 		public RelayCommand NavigateSummaryCommand { get; init; }
 		public RelayCommand CloseAppCommand { get; init; }
 
 
-		public INavigationService Navigation
+		public IMainNavigationService Navigation
 		{
-			get
-			{
-				return _navigationService;
-			}
+			get => _navigationService;
 			init
 			{
 				_navigationService = value;
@@ -25,7 +22,7 @@
 			}
 		}
 
-		public MainViewModel(INavigationService navigationService)
+		public MainViewModel(IMainNavigationService navigationService)
 		{
 			Navigation = navigationService;
 			NavigateSummaryCommand = new RelayCommand(OnNavigateSummary, o => true);

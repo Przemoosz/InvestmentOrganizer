@@ -9,22 +9,44 @@
         Height="600"
         Width="1000"
         ResizeMode="NoResize"
-        WindowStyle="None">
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border CornerRadius="10" Background="{StaticResource NavigationBackground}">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" MouseDown="Grid_MouseDown" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        FontWeight="Regular"
+                        Text="Investment Organizer"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        FontSize="18"
+                        FontFamily="{StaticResource Dosis}" />
 
-    <Grid>
-        <Grid Background="{StaticResource NavigationBackground}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <userControls:NavigationTab
-                Grid.Row="0"
-                Margin="0,5,0,0"
-                MouseDown="Grid_MouseDown" />
-            <Border Grid.Row="0" BorderThickness="0,0,0,1"
-                    BorderBrush="#9968e3"
-                    Margin="0,5,0,0" />
-            <ContentControl Grid.Row="1" Content="{Binding Navigation.CurrentView}" />
+                    <userControls:NavigationTab
+                        Grid.Column="1"
+                        Margin="0,0,0,0"
+                        />
+                    <Border Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            BorderThickness="0,0,0,1"
+                            BorderBrush="#9968e3"
+                            Margin="0,5,0,0" />
+                </Grid>
+
+                <ContentControl Grid.Row="1" Content="{Binding Navigation.CurrentView}" />
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </Window>
