@@ -6,33 +6,37 @@
 			 xmlns:viewsDeposit="clr-namespace:InvestmentsOrganizer.MVVM.Views.Deposit"
              xmlns:views="clr-namespace:InvestmentsOrganizer.MVVM.Views">
     <Application.Resources>
-	    <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
-        <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
-        <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
-		<SolidColorBrush x:Key="OverviewBackground" Color="#2F115B" />
-        <DataTemplate DataType="{x:Type viewModels:DepositViewModel}">
-            <views:DepositView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModels:SummaryViewModel}">
-            <views:SummaryView />
-        </DataTemplate>
+	    <ResourceDictionary>
+		    <ResourceDictionary.MergedDictionaries>
+			    <ResourceDictionary Source="Styles/TextBlockStyles.xaml"/>
+			    <ResourceDictionary Source="Styles/RadioButtonStyles.xaml"/>
 
-		<DataTemplate DataType="{x:Type viewModelsDeposit:AddDepositViewModel}">
-			<viewsDeposit:AddDepositView />
-		</DataTemplate>
-		<DataTemplate DataType="{x:Type viewModelsDeposit:ManageDepositViewModel}">
-			<viewsDeposit:ManageDepositView />
-		</DataTemplate>
-		<!-- Base Styles -->
-        <Style x:Key="ButtonBaseStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="LightGray" />
-            <Setter Property="FontFamily" Value="{StaticResource Dosis}" />
-        </Style>
+		    </ResourceDictionary.MergedDictionaries>
+		    <FontFamily x:Key="Dosis">pack://application:,,,/Fonts/#Dosis</FontFamily>
+		    <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
+		    <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
+		    <SolidColorBrush x:Key="OverviewBackground" Color="#2F115B" />
+		    <DataTemplate DataType="{x:Type viewModels:DepositViewModel}">
+			    <views:DepositView />
+		    </DataTemplate>
+		    <DataTemplate DataType="{x:Type viewModels:SummaryViewModel}">
+			    <views:SummaryView />
+		    </DataTemplate>
 
-		<Style x:Key="TextBlockBase" TargetType="TextBlock">
-			<Setter Property="FontFamily" Value="{StaticResource Dosis}"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="HorizontalAlignment" Value="Center"/>
-		</Style>
+		    <DataTemplate DataType="{x:Type viewModelsDeposit:AddDepositViewModel}">
+			    <viewsDeposit:AddDepositView />
+		    </DataTemplate>
+		    <DataTemplate DataType="{x:Type viewModelsDeposit:ManageDepositViewModel}">
+			    <viewsDeposit:ManageDepositView />
+		    </DataTemplate>
+		    <!-- Base Styles -->
+		    <Style x:Key="ButtonBaseStyle" TargetType="Button">
+			    <Setter Property="Foreground" Value="LightGray" />
+			    <Setter Property="FontFamily" Value="{StaticResource Dosis}" />
+		    </Style>
+        
+
+
+	    </ResourceDictionary>
     </Application.Resources>
 </Application>
