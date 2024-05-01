@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
+    <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
+    <SolidColorBrush x:Key="OverviewBackground" Color="#2F115B" />
+    <SolidColorBrush x:Key="UnreachableText" Color="#757071" />
+</ResourceDictionary>
