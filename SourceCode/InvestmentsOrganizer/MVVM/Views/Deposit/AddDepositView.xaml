@@ -6,8 +6,6 @@
              mc:Ignorable="d"
              d:DesignHeight="530" d:DesignWidth="800">
     <Grid Background="{StaticResource OverviewBackground}">
-        <Grid.Resources>
-        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -22,51 +20,8 @@
             </Grid.ColumnDefinitions>
             <StackPanel>
                 <TextBlock Text="Name" Style="{StaticResource SecondaryText}" Margin="0,0,0,5"/>
-                <TextBox Tag="Enter deposit name">
-                    <TextBox.Style>
-                        <Style TargetType="TextBox">
-                            <Style.Setters>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="TextBox">
-                                            <Border Background="LightGray" CornerRadius="10" Height="25" Width="300">
-                                                <Grid>
-                                                    <TextBox Background="Transparent"
-                                                             BorderThickness="0"
-                                                             Text="{TemplateBinding Text}"
-                                                             x:Name="NameBox"
-                                                             FontFamily="{StaticResource Dosis}"
-                                                             Padding="5" 
-                                                             TextAlignment="Center"
-                                                             FontSize="12"/>
-                                                    
-                                                    <TextBlock Text="{TemplateBinding Tag}">
-                                                        <TextBlock.Style>
-                                                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBoxTip}">
-                                                                <Style.Triggers>
-                                                                    <DataTrigger
-                                                                        Binding="{Binding Text, ElementName= NameBox}" Value="">
-                                                                        <Setter Property="Visibility" Value="Visible" />
-                                                                    </DataTrigger>
-                                                                    <DataTrigger
-                                                                        Binding="{Binding IsFocused, ElementName=NameBox}" Value="True">
-                                                                        <Setter Property="Visibility" Value="Hidden" />
-                                                                    </DataTrigger>
-                                                                </Style.Triggers>
-                                                                <Setter Property="Visibility" Value="Hidden" />
-                                                            </Style>
-                                                        </TextBlock.Style>
-                                                    </TextBlock>
-                                                </Grid>
-                                            </Border>
-
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style.Setters>
-                        </Style>
-                    </TextBox.Style>
-                </TextBox>
+                <TextBox Tag="Enter deposit name"
+                         Style="{StaticResource TextInputBox}"/>
             </StackPanel>
 
         </Grid>
