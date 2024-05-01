@@ -7,15 +7,89 @@
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="800">
 	<Grid Background="{StaticResource OverviewBackground}">
-		<!--<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="8*"/>
-			<ColumnDefinition Width="2*"/>
-		</Grid.ColumnDefinitions>-->
+		<Grid.Resources>
+			<Style x:Key="SecondaryText" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}">
+				<Style.Setters>
+					<Setter Property="Foreground" Value="LightGray"/>
+					<Setter Property="FontSize" Value="14"/>
+				</Style.Setters>
+			</Style>
+			
+		</Grid.Resources>
 		<Grid.RowDefinitions>
 			<RowDefinition/>
 			<RowDefinition/>
 			<RowDefinition/>
 			<RowDefinition/>
+			<RowDefinition/>
 		</Grid.RowDefinitions>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<StackPanel>
+				<TextBlock Text="Name" Style="{StaticResource SecondaryText}" />
+				<TextBox Tag="Enter deposit name">
+					<TextBox.Style>
+						<Style TargetType="TextBox">
+							<Style.Setters>
+								<Setter Property="Template">
+									<Setter.Value>
+										<ControlTemplate TargetType="TextBox">
+											<Border Background="LightGray" CornerRadius="10" Height="25" Width="300">
+												<Grid>
+													<Rectangle StrokeThickness="1" />
+													<TextBox
+														Background="Transparent"
+														BorderThickness="0"
+														Text="{TemplateBinding Text}"
+														x:Name="NameBox"
+														Padding="5"/>
+													<TextBlock Text="{TemplateBinding Tag}"
+													           IsHitTestVisible="False"
+													           HorizontalAlignment="Left"
+													           Padding="5"
+													           Margin="5,0,0,0"
+													           FontSize="12"
+													           Cursor="Arrow">
+														<TextBlock.Style>
+															<Style TargetType="TextBlock">
+																<Style.Triggers>
+																	<DataTrigger Binding="{Binding Text, ElementName= NameBox}" Value="">
+																		<Setter Property="Visibility" Value="Visible"/>
+																	</DataTrigger>
+																	<DataTrigger Binding="{Binding IsFocused, ElementName=NameBox}" Value="True">
+																		<Setter Property="Visibility" Value="Hidden"/>
+																	</DataTrigger>
+																</Style.Triggers>
+																<Setter Property="Visibility" Value="Hidden"/>
+															</Style>
+														</TextBlock.Style>
+													</TextBlock>
+												</Grid>
+											</Border>
+
+										</ControlTemplate>
+									</Setter.Value>
+								</Setter>
+							</Style.Setters>
+						</Style>
+					</TextBox.Style>
+				</TextBox>
+			</StackPanel>
+			
+		</Grid>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<StackPanel Grid.Column="0">
+				<TextBlock Style="{StaticResource SecondaryText}"
+						   Text="dsdsds"/>
+			</StackPanel>
+		</Grid>
 	</Grid>
 </UserControl>
