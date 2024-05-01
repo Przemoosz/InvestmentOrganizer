@@ -13,15 +13,29 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
+        <!-- <Border Grid.Row="0" BorderBrush="{StaticResource BorderLine}" -->
+        <!--         BorderThickness="0,0,0,1" -->
+        <!--         Margin="0,0,0,10"> -->
+            <TextBlock Text="Create new deposit"
+                       Style="{StaticResource TextBlockBase}"
+                       FontSize="35"
+                       FontWeight="Light"/>
+        <!-- </Border> -->
+       
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <StackPanel>
-                <TextBlock Text="Name" Style="{StaticResource SecondaryText}" Margin="0,0,0,5"/>
-                <TextBox Tag="Enter deposit name"
+                <TextBlock Text="Name" 
+                           Style="{StaticResource SecondaryText}" Margin="0,0,0,5"/>
+                <TextBox Tag="Enter deposit name" 
                          Style="{StaticResource TextInputBox}"/>
+                <Label Content="Name must be provided" 
+                       Style="{StaticResource LabelError}" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
             </StackPanel>
 
         </Grid>

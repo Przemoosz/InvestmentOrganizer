@@ -2,6 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="NavigationBackground" Color="#37146c" />
     <SolidColorBrush x:Key="NavigationBackgroundHover" Color="#2f115b" />
-    <SolidColorBrush x:Key="OverviewBackground" Color="#2F115B" />
+    <SolidColorBrush x:Key="OverviewBackground" Color="#450a88" />
+    <SolidColorBrush x:Key="RadioButtonSelected" Color="#450a88" />
     <SolidColorBrush x:Key="UnreachableText" Color="#757071" />
+    <SolidColorBrush x:Key="IoRedHover" Color="#E3441F" />
+    <SolidColorBrush x:Key="IoRed" Color="#E65B48" />
+    <SolidColorBrush x:Key="BorderLine" Color="#9968e3" />
 </ResourceDictionary>
