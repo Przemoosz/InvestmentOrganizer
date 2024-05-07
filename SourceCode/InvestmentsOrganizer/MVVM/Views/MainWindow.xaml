@@ -41,7 +41,7 @@
                     <Border Grid.Column="0"
                             Grid.ColumnSpan="2"
                             BorderThickness="0,0,0,1"
-                            BorderBrush="#9968e3"
+                            BorderBrush="{StaticResource BorderLine}"
                             Margin="0,5,0,0" />
                 </Grid>
 
